@@ -187,7 +187,7 @@ func remoteResolveRef(ctx context.Context, remote string, ref string) (string, e
 	cmd.Stderr = os.Stderr
 	err := cmd.Run()
 	if err != nil {
-		return "", err
+		return "", errors.Wrapf(err, "git ls-remote failed to determine latest commit sha for %s : %s", remote, ref)
 	}
 	commitShaPattern := regexp.MustCompile("^([0-9a-f]{40,})\\b")
 	commitSha := commitShaPattern.FindString(b.String())
