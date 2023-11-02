@@ -25,6 +25,7 @@ static:
 	CGO_ENABLED=0 go build -ldflags=${LDFLAGS} -o $(OUT_DIR)/$(BIN) ./cmd/$(BIN)
 
 build:
+	@echo ">> GO PATH is $(GOPATH) <<"
 	CGO_ENABLED=0 go build -o $(OUT_DIR)/$(BIN) ./cmd/$(BIN)
 
 install: static
@@ -44,7 +45,7 @@ test-integration:
 generate: embedmd
 	@echo ">> generating docs"
 	@./scripts/generate-help-txt.sh
-	/usr/local/go/bin/embedmd -w `find ./ -path ./vendor -prune -o -name "*.md" -print`
+	embedmd -w `find ./ -path ./vendor -prune -o -name "*.md" -print`
 
 check-license:
 	@echo ">> checking license headers"
