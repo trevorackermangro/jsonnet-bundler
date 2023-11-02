@@ -4,7 +4,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//	http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,8 +16,8 @@ package spec
 import (
 	"path/filepath"
 
-	v0 "github.com/jsonnet-bundler/jsonnet-bundler/spec/v0"
-	"github.com/jsonnet-bundler/jsonnet-bundler/spec/v1/deps"
+	v0 "github.com/trevorackermangro/jsonnet-bundler/spec/v0"
+	"github.com/trevorackermangro/jsonnet-bundler/spec/v1/deps"
 )
 
 func FromV0(mv0 v0.JsonnetFile) (JsonnetFile, error) {

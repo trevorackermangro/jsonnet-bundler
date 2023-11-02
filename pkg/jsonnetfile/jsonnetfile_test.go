@@ -22,9 +22,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/jsonnet-bundler/jsonnet-bundler/pkg/jsonnetfile"
-	v1 "github.com/jsonnet-bundler/jsonnet-bundler/spec/v1"
-	"github.com/jsonnet-bundler/jsonnet-bundler/spec/v1/deps"
+	"github.com/trevorackermangro/jsonnet-bundler/pkg/jsonnetfile"
+	v1 "github.com/trevorackermangro/jsonnet-bundler/spec/v1"
+	"github.com/trevorackermangro/jsonnet-bundler/spec/v1/deps"
 )
 
 const notExist = "/this/does/not/exist"

@@ -20,7 +20,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/jsonnet-bundler/jsonnet-bundler/spec/v1/deps"
+	"github.com/trevorackermangro/jsonnet-bundler/spec/v1/deps"
 )
 
 func TestParseDependency(t *testing.T) {
@@ -48,13 +48,13 @@ func TestParseDependency(t *testing.T) {
 		},
 		{
 			name: "GitHTTPS",
-			path: "example.com/jsonnet-bundler/jsonnet-bundler",
+			path: "example.com/trevorackermangro/jsonnet-bundler",
 			want: &deps.Dependency{
 				Source: deps.Source{
 					GitSource: &deps.Git{
 						Scheme: deps.GitSchemeHTTPS,
 						Host:   "example.com",
-						User:   "jsonnet-bundler",
+						User:   "trevorackermangro",
 						Repo:   "jsonnet-bundler",
 						Subdir: "",
 					},
@@ -64,13 +64,13 @@ func TestParseDependency(t *testing.T) {
 		},
 		{
 			name: "SSH",
-			path: "git+ssh://git@github.com/jsonnet-bundler/jsonnet-bundler.git",
+			path: "git+ssh://git@github.com/trevorackermangro/jsonnet-bundler.git",
 			want: &deps.Dependency{
 				Source: deps.Source{
 					GitSource: &deps.Git{
 						Scheme: deps.GitSchemeSSH,
 						Host:   "github.com",
-						User:   "jsonnet-bundler",
+						User:   "trevorackermangro",
 						Repo:   "jsonnet-bundler",
 						Subdir: "",
 					},

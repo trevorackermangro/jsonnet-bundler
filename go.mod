@@ -1,4 +1,4 @@
-module github.com/jsonnet-bundler/jsonnet-bundler
+module github.com/trevorackermangro/jsonnet-bundler
 
 go 1.12
 

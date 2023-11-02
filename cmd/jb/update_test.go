@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+//go:build integration
 // +build integration
 
 package main
@@ -22,9 +23,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/jsonnet-bundler/jsonnet-bundler/pkg/jsonnetfile"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/trevorackermangro/jsonnet-bundler/pkg/jsonnetfile"
 )
 
 // RepoState describes a point in time of a repository

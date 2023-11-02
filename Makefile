@@ -2,7 +2,7 @@
 
 SHELL=/bin/bash
 
-GITHUB_URL=github.com/jsonnet-bundler/jsonnet-bundler
+GITHUB_URL=github.com/trevorackermangro/jsonnet-bundler
 VERSION := $(shell git describe --tags --dirty --always)
 OUT_DIR=_output
 BIN?=jb
@@ -44,7 +44,7 @@ test-integration:
 generate: embedmd
 	@echo ">> generating docs"
 	@./scripts/generate-help-txt.sh
-	$(GOPATH)/bin/embedmd -w `find ./ -path ./vendor -prune -o -name "*.md" -print`
+	embedmd -w `find ./ -path ./vendor -prune -o -name "*.md" -print`
 
 check-license:
 	@echo ">> checking license headers"

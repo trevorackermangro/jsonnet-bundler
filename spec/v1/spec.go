@@ -18,7 +18,7 @@ import (
 	"encoding/json"
 	"sort"
 
-	"github.com/jsonnet-bundler/jsonnet-bundler/spec/v1/deps"
+	"github.com/trevorackermangro/jsonnet-bundler/spec/v1/deps"
 )
 
 const Version uint = 1
