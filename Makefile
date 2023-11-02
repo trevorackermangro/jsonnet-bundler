@@ -7,7 +7,7 @@ VERSION := $(shell git describe --tags --dirty --always)
 OUT_DIR=_output
 BIN?=jb
 PKGS=$(shell go list ./... | grep -v /vendor/)
-GOPATH ?= $(shell dirname $(shell which go))
+GOPATH ?= /home/runner/go/bin
 all: check-license build generate test
 
 # Binaries
