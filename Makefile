@@ -44,7 +44,7 @@ test-integration:
 generate: embedmd
 	@echo ">> generating docs"
 	@./scripts/generate-help-txt.sh
-	$(GOPATH)/bin/embedmd -w `find ./ -path ./vendor -prune -o -name "*.md" -print`
+	/usr/local/go/bin/embedmd -w `find ./ -path ./vendor -prune -o -name "*.md" -print`
 
 check-license:
 	@echo ">> checking license headers"
