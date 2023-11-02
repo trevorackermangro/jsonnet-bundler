@@ -29,7 +29,7 @@ func rewriteCommand(dir, vendorDir string) int {
 	}
 
 	if err := rewrite.Rewrite(dir, vendorDir, locks.Dependencies); err != nil {
-		kingpin.FatalIfError(err, "")
+		kingpin.FatalIfError(err, "Failed rewrite")
 	}
 
 	return 0

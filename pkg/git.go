@@ -81,6 +81,7 @@ func downloadGitHubArchive(filepath string, url string) error {
 	// Create the file
 	out, err := os.Create(filepath)
 	if err != nil {
+		color.Red("Failed creating %s: %v", filepath, err)
 		return err
 	}
 	defer out.Close()
@@ -88,6 +89,7 @@ func downloadGitHubArchive(filepath string, url string) error {
 	// Write the body to file
 	_, err = io.Copy(out, resp.Body)
 	if err != nil {
+		color.Red("Failed writing response to %s: %v", filepath, err)
 		return err
 	}
 
@@ -224,6 +226,7 @@ func (p *GitPackage) Install(ctx context.Context, name, dir, version string) (st
 		defer os.Remove(archiveFilepath)
 		err = downloadGitHubArchive(archiveFilepath, archiveUrl)
 		if err == nil {
+			color.Cyan("Expanding GitHub Archive")
 			var ar *os.File
 			ar, err = os.Open(archiveFilepath)
 			defer ar.Close()

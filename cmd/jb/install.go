@@ -40,7 +40,7 @@ func installCommand(dir, jsonnetHome string, uris []string, single bool, legacyN
 	kingpin.FatalIfError(err, "failed to load jsonnetfile")
 
 	jsonnetFile, err := jsonnetfile.Unmarshal(jbfilebytes)
-	kingpin.FatalIfError(err, "")
+	kingpin.FatalIfError(err, "Failed unmarshalling jsonnet file")
 
 	jblockfilebytes, err := ioutil.ReadFile(filepath.Join(dir, jsonnetfile.LockFile))
 	if !os.IsNotExist(err) {
@@ -48,7 +48,7 @@ func installCommand(dir, jsonnetHome string, uris []string, single bool, legacyN
 	}
 
 	lockFile, err := jsonnetfile.Unmarshal(jblockfilebytes)
-	kingpin.FatalIfError(err, "")
+	kingpin.FatalIfError(err, "Failed unmarshalling jsonnet lock file")
 
 	kingpin.FatalIfError(
 		os.MkdirAll(filepath.Join(dir, jsonnetHome, ".tmp"), os.ModePerm),
