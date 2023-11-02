@@ -7,7 +7,7 @@ VERSION := $(shell git describe --tags --dirty --always)
 OUT_DIR=_output
 BIN?=jb
 PKGS=$(shell go list ./... | grep -v /vendor/)
-
+GOPATH ?= $(shell which go)
 all: check-license build generate test
 
 # Binaries
@@ -45,7 +45,7 @@ test-integration:
 generate: embedmd
 	@echo ">> generating docs"
 	@./scripts/generate-help-txt.sh
-	embedmd -w `find ./ -path ./vendor -prune -o -name "*.md" -print`
+	$(GOPATH)/embedmd -w `find ./ -path ./vendor -prune -o -name "*.md" -print`
 
 check-license:
 	@echo ">> checking license headers"
@@ -53,7 +53,6 @@ check-license:
 
 embedmd:
 	pushd /tmp && go install github.com/campoy/embedmd@latest && popd
-	which embedmd
 
 # Other
 clean:
