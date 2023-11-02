@@ -53,6 +53,7 @@ check-license:
 
 embedmd:
 	pushd /tmp && go install github.com/campoy/embedmd@latest && popd
+	which embedmd
 
 # Other
 clean:
